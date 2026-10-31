@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Review your Crown Farm product enquiry.">
+    <meta name="theme-color" content="#f6f3e8">
+    <title>Your Enquiry | Crown Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body data-page="cart">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Crown Farm home"><span class="brand-mark" aria-hidden="true">C</span><span>Crown Farm<small>GOOD STOCK, RAISED WITH CARE</small></span></a>
+            <nav class="main-nav" aria-label="Main navigation"><a href="index.html#home">Home</a><a href="index.html#products">Our products</a><a href="index.html#about">Our farm</a></nav>
+            <a class="cart-link" href="cartpage.html" aria-label="Open your enquiry basket">Enquiry basket <span class="cart-count" aria-live="polite">0</span></a>
+        </div>
+    </header>
+    <main class="cart-page section-pad">
+        <div class="container">
+            <a class="back-link" href="index.html#products">← Continue browsing</a>
+            <div class="section-heading cart-heading"><div><p class="eyebrow">Your shortlist</p><h1>Your enquiry basket</h1></div><p class="section-intro">Review your selections and copy them into a message to our team. We’ll confirm availability and pricing with you.</p></div>
+            <div id="cartContents" class="cart-contents" aria-live="polite"></div>
+            <div id="cartActions" class="cart-actions" hidden>
+                <button class="button button-outline" id="clearCart" type="button">Clear basket</button>
+                <button class="button button-dark" id="copyEnquiry" type="button">Copy enquiry <span aria-hidden="true">↗</span></button>
+            </div>
+            <p id="cartStatus" class="cart-status" role="status" aria-live="polite"></p>
+        </div>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span>Crown Farm<small>GOOD STOCK, RAISED WITH CARE</small></span></a><p>© <span id="sevenYearago"></span> Crown Farm. Grown with care. Message 08033398683 for your enquires basket</p><a href="index.html#home">Back to home ↑</a></div></footer>
+    <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
