@@ -8,7 +8,12 @@
         duck: "Farm Duck",
         "guinea-fowl": "Guinea Fowl"
     };
+    const whatsappNumber = "2348033398683";
     const storageKey = "crownFarmEnquiry";
+    const buildEnquiryMessage = (items) => [
+        "Hello Crown Farm, I would like to enquire about:",
+        ...items.map(([id, quantity]) => `- ${products[id]} (quantity: ${quantity})`)
+    ].join("\n");
     const readCart = () => {
         try {
             const stored = JSON.parse(localStorage.getItem(storageKey) || "{}");
@@ -100,10 +105,15 @@
     const cartContents = document.getElementById("cartContents");
     const cartActions = document.getElementById("cartActions");
     const cartStatus = document.getElementById("cartStatus");
+    const whatsappEnquiry = document.getElementById("whatsappEnquiry");
     if (cartContents) {
         const renderCart = () => {
             const items = Object.entries(cart);
             cartActions.hidden = items.length === 0;
+            if (whatsappEnquiry) {
+                const message = buildEnquiryMessage(items);
+                whatsappEnquiry.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            }
             if (items.length === 0) {
                 cartContents.innerHTML = '<div class="empty-cart"><span aria-hidden="true">✳</span><h2>Your basket is waiting.</h2><p>Browse our products and add anything you would like to ask us about.</p><a class="button button-dark" href="index.html#products">Browse products <span aria-hidden="true">→</span></a></div>';
                 return;
@@ -131,7 +141,7 @@
             }
         });
         document.getElementById("copyEnquiry")?.addEventListener("click", async () => {
-            const message = ["Hello Crown Farm, I would like to enquire about:", ...Object.entries(cart).map(([id, quantity]) => `- ${products[id]} (quantity: ${quantity})`)].join("\n");
+            const message = buildEnquiryMessage(Object.entries(cart));
             try {
                 await navigator.clipboard.writeText(message);
                 if (cartStatus) cartStatus.textContent = "Enquiry copied. Paste it into a message to Crown Farm.";
