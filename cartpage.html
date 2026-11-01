@@ -24,12 +24,19 @@
             <div id="cartContents" class="cart-contents" aria-live="polite"></div>
             <div id="cartActions" class="cart-actions" hidden>
                 <button class="button button-outline" id="clearCart" type="button">Clear basket</button>
-                <button class="button button-dark" id="copyEnquiry" type="button">Copy enquiry <span aria-hidden="true">↗</span></button>
+                <button class="button button-outline" id="copyEnquiry" type="button">Copy enquiry <span aria-hidden="true">↗</span></button>
+                <label class="whatsapp-recipient" for="whatsappNumber">Send to
+                    <select id="whatsappNumber">
+                        <option value="2348033398683">0803 339 8683</option>
+                        <option value="2347048727231">0704 872 7231</option>
+                    </select>
+                </label>
+                <a class="button button-whatsapp" id="whatsappEnquiry" href="https://wa.me/2348033398683" target="_blank" rel="noopener noreferrer">Send enquiry on WhatsApp <span aria-hidden="true">↗</span></a>
             </div>
             <p id="cartStatus" class="cart-status" role="status" aria-live="polite"></p>
         </div>
     </main>
-    <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span>Crown Farm<small>GOOD STOCK, RAISED WITH CARE</small></span></a><p>© <span id="sevenYearago"></span> Crown Farm. Grown with care. Message 08033398683 for your enquires basket</p><a href="index.html#home">Back to home ↑</a></div></footer>
+    <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span>Crown Farm<small>GOOD STOCK, RAISED WITH CARE</small></span></a><p>© Crown Farm. Grown with care. <a href="https://wa.me/2348033398683?text=Hello%20Crown%20Farm%2C%20I%20have%20an%20enquiry." target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a></p><a href="index.html#home">Back to home ↑</a></div></footer>
     <div class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

@@ -59,8 +59,11 @@ h1, h2, h3, p { margin-top: 0; }
 .button:hover { transform: translateY(-2px); }
 .button-dark { background: var(--green); color: white; }
 .button-dark:hover { background: var(--green-dark); }
+.button-whatsapp { background: #168a4a; color: white; }
+.button-whatsapp:hover { background: #116d3a; }
 .button-outline { border-color: #bdc9b8; background: transparent; color: var(--green-dark); }
 .button-outline:hover { border-color: var(--green); background: var(--green-soft); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 35px; color: #738071; font-size: 0.8rem; }
 .note-icon { color: var(--green); font-size: 1.2rem; }
 .hero-art { position: relative; min-height: 425px; align-self: stretch; margin: 8px 0; }
@@ -89,6 +92,8 @@ h1, h2, h3, p { margin-top: 0; }
 .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .product-card:hover .product-image img { transform: scale(1.035); }
 .product-label { position: absolute; top: 13px; left: 13px; padding: 7px 10px; background: rgba(255,253,247,.94); color: var(--green); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.04em; }
+.image-credit { position: absolute; right: 0; bottom: 0; left: 0; padding: 6px 9px; background: rgba(32, 61, 42, 0.86); color: white; font-size: 0.58rem; line-height: 1.35; }
+.image-credit:hover { text-decoration: underline; text-underline-offset: 2px; }
 .product-body { padding: 20px 19px 18px; }
 .product-type { margin: 0 0 8px; color: #778571; font-size: 0.63rem; font-weight: 750; letter-spacing: 0.13em; }
 .product-body h3 { margin: 0 0 9px; font-family: Georgia, serif; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.025em; }
@@ -109,6 +114,7 @@ h1, h2, h3, p { margin-top: 0; }
 .newsletter-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
 .newsletter-inner .eyebrow { margin-bottom: 9px; }
 .newsletter-inner h2 { max-width: 470px; font-size: clamp(1.9rem, 3vw, 2.55rem); }
+.newsletter-note { margin: 14px 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.65; }
 .newsletter-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
 .newsletter-form input { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid #d6dacd; border-radius: 3px; background: var(--paper); color: var(--ink); font-size: 0.84rem; }
 .newsletter-form input::placeholder { color: #91988d; }
@@ -136,7 +142,12 @@ h1, h2, h3, p { margin-top: 0; }
 .empty-cart > span { color: var(--green); font-size: 1.8rem; }
 .empty-cart h2 { margin: 12px 0; font-family: Georgia, serif; font-size: 2rem; font-weight: 500; }
 .empty-cart p { margin: 0 auto 22px; color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.cart-actions { display: flex; justify-content: space-between; gap: 15px; max-width: 850px; margin-top: 22px; }
+.cart-actions { display: flex; align-items: center; gap: 12px; max-width: 850px; margin-top: 22px; }
+.cart-actions #clearCart { margin-right: auto; }
+.whatsapp-recipient { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.8rem; white-space: nowrap; }
+.whatsapp-recipient select { min-height: 43px; padding: 8px 10px; border: 1px solid #bdc9b8; border-radius: 4px; background: var(--paper); color: var(--green-dark); }
+.footer-inner > p a { color: var(--green); font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+.footer-inner > p a:hover { color: var(--green-dark); }
 .cart-actions[hidden] { display: none; }
 .cart-status { min-height: 22px; margin: 16px 0 0; color: var(--green); font-size: 0.82rem; }
 .copy-fallback { display: block; width: 100%; min-height: 110px; margin-top: 16px; padding: 12px; border: 1px solid #d6dacd; background: white; color: var(--ink); }
@@ -187,7 +198,8 @@ h1, h2, h3, p { margin-top: 0; }
     .cart-item { grid-template-columns: 1fr auto; gap: 12px; }
     .cart-quantity { grid-column: 1; grid-row: 2; }
     .remove-item { grid-column: 2; grid-row: 1 / 3; }
-    .cart-actions { flex-direction: column-reverse; }
+    .cart-actions { align-items: stretch; flex-direction: column-reverse; }
+    .cart-actions #clearCart { margin-right: 0; }
     .cart-actions .button { width: 100%; }
 }
 
